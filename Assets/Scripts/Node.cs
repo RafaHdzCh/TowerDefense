@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
+    BuildManager buildManager;
+
     private GameObject turret;
     private Vector3 turretOffset = new Vector3(0f,0.5f,0f);
 
@@ -12,11 +15,15 @@ public class Node : MonoBehaviour
 
     private void Start()
     {
+        buildManager = BuildManager.instance;
         initialColor = nodeRenderer.material.color;
     }
 
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+        if (buildManager.GetTurretToBuild() == null) return;
+
         if(turret != null)
         {
             Debug.Log("Cant build there!");
@@ -28,6 +35,9 @@ public class Node : MonoBehaviour
 
     void OnMouseEnter()
     {
+        if(EventSystem.current.IsPointerOverGameObject()) return;
+
+        if (buildManager.GetTurretToBuild() == null) return;
         nodeRenderer.material.color = hoverColor;
     }
 

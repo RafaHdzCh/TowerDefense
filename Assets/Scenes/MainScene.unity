@@ -517,7 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 1691512922}
     - target: {fileID: 8239893939574026418, guid: 3671a773fa24f4c02aa7fd06f4c8f1e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseLaserTurret
+      value: SelectLaserTurret
       objectReference: {fileID: 0}
     - target: {fileID: 8239893939574026419, guid: 3671a773fa24f4c02aa7fd06f4c8f1e8, type: 3}
       propertyPath: m_Pivot.x
@@ -6505,6 +6505,7 @@ GameObject:
   - component: {fileID: 881601724}
   - component: {fileID: 881601725}
   - component: {fileID: 881601726}
+  - component: {fileID: 881601727}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6558,6 +6559,19 @@ MonoBehaviour:
   standardTurretPrefab: {fileID: 505327303667836047, guid: 48a3e538abfb0402dba54858c97f20a3, type: 3}
   missileTurretPrefab: {fileID: 9052834794277285980, guid: 201a2dfbf736a4dad9f64f5768fbbde8, type: 3}
   laserTurretPrefab: {fileID: 197922035260497950, guid: d9462001141304f0faedd02e74f35ca1, type: 3}
+--- !u!114 &881601727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881601723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51790a14455194a70bbf15cc5af2a02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 400
 --- !u!1 &888595095
 GameObject:
   m_ObjectHideFlags: 0
@@ -8732,7 +8746,7 @@ PrefabInstance:
       objectReference: {fileID: 1691512922}
     - target: {fileID: 8239893939574026418, guid: 3671a773fa24f4c02aa7fd06f4c8f1e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseMissileTurret
+      value: SelectMissileTurret
       objectReference: {fileID: 0}
     - target: {fileID: 8239893939574026419, guid: 3671a773fa24f4c02aa7fd06f4c8f1e8, type: 3}
       propertyPath: m_Pivot.x
@@ -12796,6 +12810,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5df3f7409a0441cb3094f2a670bd4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardTurret:
+    prefab: {fileID: 505327303667836047, guid: 48a3e538abfb0402dba54858c97f20a3, type: 3}
+    cost: 100
+  missileLauncher:
+    prefab: {fileID: 9052834794277285980, guid: 201a2dfbf736a4dad9f64f5768fbbde8, type: 3}
+    cost: 250
+  laserBeamer:
+    prefab: {fileID: 197922035260497950, guid: d9462001141304f0faedd02e74f35ca1, type: 3}
+    cost: 400
 --- !u!1001 &1692186508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16653,6 +16676,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1691512922}
+    - target: {fileID: 8239893939574026418, guid: 3671a773fa24f4c02aa7fd06f4c8f1e8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectStandardTurret
+      objectReference: {fileID: 0}
     - target: {fileID: 8239893939574026419, guid: 3671a773fa24f4c02aa7fd06f4c8f1e8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

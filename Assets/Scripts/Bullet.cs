@@ -4,7 +4,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] GameObject impactEffect;
     private Transform target;
-    private float bulletspeed = 70f;
+    public float bulletspeed = 70f;
 
     public void Seek(Transform _target)
     {
@@ -28,6 +28,7 @@ public class Bullet : MonoBehaviour
         }
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+        transform.LookAt(target);
     }
 
     private void HitTarget()

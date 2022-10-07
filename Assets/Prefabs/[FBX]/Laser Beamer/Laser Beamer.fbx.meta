@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Pipe
-    second: {fileID: 2100000, guid: a4a3a4dd3d4e846ab80696125c25d3f0, type: 2}
+    second: {fileID: 2100000, guid: 051a6a76198cb4d40a12a0a7d4c3d445, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

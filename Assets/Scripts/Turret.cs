@@ -11,9 +11,9 @@ public class Turret : MonoBehaviour
 
     private Transform target;
     private readonly string enemyTag = "Enemy";
-    private const float range = 12.5f;
+    public float range = 12.5f;
     private const float rotationSpeed = 10f;
-    private const float fireRate = 1f;
+    public float fireRate = 1f;
     private float fireCountdown = 0f;
 
     void Start()

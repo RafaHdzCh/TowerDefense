@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48da527595aaa4707b56b0bc4d3ae4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactEffect: {fileID: 1010466966450922807, guid: 56db3b156e56c447a9e8d50275eb9aff, type: 3}
+  impactEffect: {fileID: 7051163401326158289, guid: d7af2d67792bb4ba0b54d00a485e551c, type: 3}
+  explosionRadius: 4
   bulletspeed: 20
 --- !u!1 &7606411331775138427
 GameObject:

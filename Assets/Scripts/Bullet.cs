@@ -1,9 +1,12 @@
+using System.Drawing;
 using UnityEngine;
+using Color = UnityEngine.Color;
 
 public class Bullet : MonoBehaviour
 {
     [SerializeField] GameObject impactEffect;
     private Transform target;
+    public float explosionRadius = 0f;
     public float bulletspeed = 70f;
 
     public void Seek(Transform _target)
@@ -36,7 +39,39 @@ public class Bullet : MonoBehaviour
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
 
+        if (explosionRadius > 0f)
+        {
+            Explode();
+        }
+        else
+        {
+            Damage(target);
+        }
+
         Destroy(target.gameObject);
         Destroy(gameObject);
+
+    }
+    private void Damage(Transform enemy)
+    {
+        Destroy(enemy.gameObject);
+    }
+
+    private void Explode()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (Collider collider in colliders)
+        {
+            if(collider.CompareTag("Enemy"))
+            {
+                Damage(collider.transform);
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }

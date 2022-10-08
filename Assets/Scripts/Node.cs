@@ -12,6 +12,7 @@ public class Node : MonoBehaviour
     [SerializeField] Renderer nodeRenderer;
     private Color initialColor;
     public Color hoverColor;
+    public Color notEnoughMoneyColor;
 
     private void Start()
     {
@@ -42,7 +43,16 @@ public class Node : MonoBehaviour
         if(EventSystem.current.IsPointerOverGameObject()) return;
 
         if (!buildManager.CanBuild) return;
-        nodeRenderer.material.color = hoverColor;
+
+        if(buildManager.HasMoney)
+        {
+            nodeRenderer.material.color = hoverColor;
+        }
+        else
+        {
+            nodeRenderer.material.color = notEnoughMoneyColor;
+        }
+        
     }
 
     private void OnMouseExit()

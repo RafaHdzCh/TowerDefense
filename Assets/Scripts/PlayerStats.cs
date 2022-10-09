@@ -6,11 +6,11 @@ public class PlayerStats : MonoBehaviour
 {
     //Money
     public static int Money;
-    public int startMoney = 400;
+    [System.NonSerialized] public int startMoney = 350;
 
     //Lives
     public static int Lives;
-    public int startLives = 20;
+    [System.NonSerialized] public int startLives = 20;
     
 
     private void Start()

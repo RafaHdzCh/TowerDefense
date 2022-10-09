@@ -4,11 +4,16 @@ using Color = UnityEngine.Color;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] GameObject impactEffect;
     private Transform target;
-    public float explosionRadius = 0f;
+
+    [Header("Bullet Attributes")]
+    [SerializeField] GameObject impactEffect;
     public float bulletspeed = 70f;
     public int bulletDamage = 5;
+    public float effectDuration = 0.5f;
+    public float explosionRadius = 0f;
+    
+    
 
     public void Seek(Transform _target)
     {
@@ -38,7 +43,7 @@ public class Bullet : MonoBehaviour
     private void HitTarget()
     {
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(effectIns, 2f);
+        Destroy(effectIns, effectDuration);
 
         if (explosionRadius > 0f)
         {

@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject deathEffect;
     private int enemyHealt = 10;
-    private const float enemySpeed = 5f;
+    private const float enemySpeed = 10f;
     private Transform target;
     private int waypointIndex = 0;
     private const int drop = 20;
@@ -53,6 +53,7 @@ public class Enemy : MonoBehaviour
         }
         waypointIndex++;
         target = Waypoints.points[waypointIndex];
+        transform.LookAt(target);
     }
 
     void EndPath()

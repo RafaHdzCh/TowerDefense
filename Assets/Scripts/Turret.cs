@@ -6,14 +6,16 @@ public class Turret : MonoBehaviour
 {
     [Header("Attributes")]
     [SerializeField] Transform partToRotate;
-    [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;
+
+    [Header("Ammo")]
+    [SerializeField] GameObject bulletPrefab;
+    public float range = 20f;
+    public float fireRate = 0.5f;
 
     private Transform target;
     private readonly string enemyTag = "Enemy";
-    public float range = 12.5f;
     private const float rotationSpeed = 10f;
-    public float fireRate = 1f;
     private float fireCountdown = 0f;
 
     void Start()
@@ -24,11 +26,7 @@ public class Turret : MonoBehaviour
     void Update()
     {
         if (target == null) return;
-
-        Vector3 dir = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        LockOnTarget();
 
         if(fireCountdown <= 0f)
         {
@@ -36,6 +34,14 @@ public class Turret : MonoBehaviour
             fireCountdown = 1f / fireRate; 
         }
         fireCountdown -= Time.deltaTime;
+    }
+
+    void LockOnTarget()
+    {
+        Vector3 dir = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(dir);
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
+        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
     void Shoot()
@@ -74,10 +80,9 @@ public class Turret : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
-
 }

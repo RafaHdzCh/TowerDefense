@@ -7,9 +7,6 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
     private TurretBlueprint turretToBuild;
-    public GameObject standardTurretPrefab;
-    public GameObject missileTurretPrefab;
-    public GameObject laserTurretPrefab;
     [SerializeField] GameObject buildEffect;
     [SerializeField] ParticleSystem buildEffectPartycleSystem;
     public bool CanBuild { get { return turretToBuild != null; } }

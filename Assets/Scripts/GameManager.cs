@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private bool gameEnded = false;
+    [SerializeField] GameObject gameOverPanel;
+    [HideInInspector] public static bool gameEnded;
+
+    private void Start()
+    {
+        gameEnded = false;
+    }
 
     void Update()
     {
         if (gameEnded) return;
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            EndGame();
+        }
+
         if(PlayerStats.Lives <= 0)
         {
             EndGame();
@@ -17,6 +29,6 @@ public class GameManager : MonoBehaviour
     void EndGame()
     {
         gameEnded = true;
-        print("GAMEOVER");
+        gameOverPanel.SetActive(true);
     }
 }

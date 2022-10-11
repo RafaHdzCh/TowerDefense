@@ -6,16 +6,19 @@ public class PlayerStats : MonoBehaviour
 {
     //Money
     public static int Money;
-    [System.NonSerialized] public int startMoney = 350;
+    [HideInInspector] public int startMoney = 350;
 
     //Lives
     public static int Lives;
-    [System.NonSerialized] public int startLives = 20;
+    [HideInInspector] public int startLives = 20;
+
+    public static int Rounds;
     
 
     private void Start()
     {
         Money = startMoney;
         Lives = startLives;
+        Rounds = 0;
     }
 }

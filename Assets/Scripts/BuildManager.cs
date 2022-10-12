@@ -8,8 +8,8 @@ public class BuildManager : MonoBehaviour
     public static BuildManager instance;
     private TurretBlueprint turretToBuild;
     private Node selectedNode;
-    [SerializeField] GameObject buildEffect;
-    [SerializeField] ParticleSystem buildEffectPartycleSystem;
+    [SerializeField] public GameObject buildEffect;
+    [SerializeField] public ParticleSystem buildEffectPartycleSystem;
     public bool CanBuild { get { return turretToBuild != null; } }
     public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
     [SerializeField] NodeUI nodeUI;
@@ -50,20 +50,8 @@ public class BuildManager : MonoBehaviour
         DeselectNode();
     }
 
-    public void BuildTurretOn(Node node)
+    public TurretBlueprint GetTurretToBuild()
     {
-        if(PlayerStats.Money < turretToBuild.cost)
-        {
-            print("Not enough money.");
-            return;
-        }
-
-        PlayerStats.Money -= turretToBuild.cost;
-        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
-        node.turret = turret;
-        GameObject effect = (GameObject)Instantiate(buildEffect, node.GetBuildPosition(), Quaternion.identity);
-        Destroy(effect, buildEffectPartycleSystem.duration);
-        Debug.Log("Turret build. Money left: " + PlayerStats.Money);
-
+        return turretToBuild;
     }
 }

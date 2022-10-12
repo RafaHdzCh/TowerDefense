@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -5,8 +6,10 @@ public class Node : MonoBehaviour
 {
     BuildManager buildManager;
 
-    [System.NonSerialized] public GameObject turret;
-    [System.NonSerialized] public Vector3 turretOffset = new Vector3(0f,0.5f,0f);
+    [HideInInspector] public GameObject turret;
+    [HideInInspector] public TurretBlueprint turretBlueprint;
+    [HideInInspector] public bool isUpgraded = false;
+    [HideInInspector] public Vector3 turretOffset = new Vector3(0f,0.5f,0f);
 
     [Header("Visual")]
     [SerializeField] Renderer nodeRenderer;
@@ -36,7 +39,43 @@ public class Node : MonoBehaviour
 
         if (!buildManager.CanBuild) return;
 
-        buildManager.BuildTurretOn(this);
+        BuildTurret(buildManager.GetTurretToBuild());
+    }
+
+    void BuildTurret(TurretBlueprint blueprint)
+    {
+        if (PlayerStats.Money < blueprint.cost)
+        {
+            return;
+        }
+
+        PlayerStats.Money -= blueprint.cost;
+        GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        turret = _turret;
+
+        turretBlueprint = blueprint;
+
+        GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, buildManager.buildEffectPartycleSystem.duration);
+    }
+
+    public void UpgradeTurret()
+    {
+        if (PlayerStats.Money < turretBlueprint.upgradeCost)
+        {
+            print("Not enough money to upgrade.");
+            return;
+        }
+
+        PlayerStats.Money -= turretBlueprint.upgradeCost;
+        Destroy(turret);
+
+        GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
+        turret = _turret;
+        GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, buildManager.buildEffectPartycleSystem.duration);
+
+        isUpgraded = true;
     }
 
     void OnMouseEnter()
@@ -53,7 +92,6 @@ public class Node : MonoBehaviour
         {
             nodeRenderer.material.color = notEnoughMoneyColor;
         }
-        
     }
 
     private void OnMouseExit()

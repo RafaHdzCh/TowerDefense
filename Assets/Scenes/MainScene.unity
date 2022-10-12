@@ -2092,7 +2092,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 219225317}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1289654863}
+        m_TargetAssemblyTypeName: NodeUI, Assembly-CSharp
+        m_MethodName: Sell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &219225317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7494,7 +7506,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildEffect: {fileID: 5371999652088326479, guid: f5b6ade1c43204e579acdd03c9a263d1, type: 3}
+  sellEffect: {fileID: 1845955007268882, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
   buildEffectPartycleSystem: {fileID: 5371999652088326477, guid: f5b6ade1c43204e579acdd03c9a263d1, type: 3}
+  sellEffectPartycleSystem: {fileID: 198357973136645638, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
   nodeUI: {fileID: 1289654863}
 --- !u!114 &881601727
 MonoBehaviour:

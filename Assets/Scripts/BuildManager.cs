@@ -9,7 +9,9 @@ public class BuildManager : MonoBehaviour
     private TurretBlueprint turretToBuild;
     private Node selectedNode;
     [SerializeField] public GameObject buildEffect;
+    [SerializeField] public GameObject sellEffect;
     [SerializeField] public ParticleSystem buildEffectPartycleSystem;
+    [SerializeField] public ParticleSystem sellEffectPartycleSystem;
     public bool CanBuild { get { return turretToBuild != null; } }
     public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
     [SerializeField] NodeUI nodeUI;

@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     private int enemyHealt = 10;
     private const float initialSpeed = 10f;
     [HideInInspector] public float enemySpeed;
-    private const int drop = 20;
+    private const int drop = 10;
 
     private void Start()
     {

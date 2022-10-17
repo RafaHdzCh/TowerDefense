@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private readonly string levelScene = "MainScene";
+    private readonly string levelScene = "LevelSelector";
     [SerializeField] SceneFader sceneFader;
 
     public void Play()

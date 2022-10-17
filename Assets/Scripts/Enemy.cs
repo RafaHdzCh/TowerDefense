@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     [Header("Enemy Stats")]
-    private float enemyStartHeatlh = 10f;
+    public float enemyStartHeatlh = 10f;
     private float enemyHealt;
-    private const float initialSpeed = 10f;
+    public float initialSpeed = 10f;
     [HideInInspector] public float enemySpeed;
-    private const int drop = 20;
+    public int drop = 20;
 
     [Header("Enemy Components")]
     [SerializeField] GameObject deathEffect;
@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour
         PlayerStats.Money += drop;
         GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 2f);
+        WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
     }
 }

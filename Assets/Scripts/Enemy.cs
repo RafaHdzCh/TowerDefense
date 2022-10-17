@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public float initialSpeed = 10f;
     [HideInInspector] public float enemySpeed;
     public int drop = 20;
+    private bool isDead = false;
 
     [Header("Enemy Components")]
     [SerializeField] GameObject deathEffect;
@@ -26,7 +27,7 @@ public class Enemy : MonoBehaviour
         enemyHealt -= amount;
         Debug.Log(enemyHealt / 10);
         healthBar.fillAmount = (enemyHealt / enemyStartHeatlh);
-        if (enemyHealt <= 0)
+        if (enemyHealt <= 0 && isDead == false)
         {
             Die();
         }
@@ -39,8 +40,9 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        isDead = true;
         PlayerStats.Money += drop;
-        GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+        GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 2f);
         WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);

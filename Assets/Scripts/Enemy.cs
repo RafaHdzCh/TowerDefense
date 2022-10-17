@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     [Header("Enemy Components")]
     [SerializeField] GameObject deathEffect;
     [SerializeField] Image healthBar;
+    [SerializeField] AudioSource enemyHitFX;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int amount)
     {
         enemyHealt -= amount;
+        enemyHitFX.Play();
         Debug.Log(enemyHealt / 10);
         healthBar.fillAmount = (enemyHealt / enemyStartHeatlh);
         if (enemyHealt <= 0 && isDead == false)

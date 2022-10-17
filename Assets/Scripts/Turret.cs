@@ -7,6 +7,7 @@ public class Turret : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] Transform partToRotate;
     [SerializeField] Transform firePoint;
+    [SerializeField] AudioSource shootFX;
 
     [Header("Ammo")]
     [SerializeField] GameObject bulletPrefab;
@@ -46,7 +47,8 @@ public class Turret : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        shootFX.Play();
         Bullet bulletScript = bulletGO.GetComponent<Bullet>();
         if(bulletScript != null)
         {

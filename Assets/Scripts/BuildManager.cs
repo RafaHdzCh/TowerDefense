@@ -9,6 +9,7 @@ public class BuildManager : MonoBehaviour
     private TurretBlueprint turretToBuild;
     private Node selectedNode;
     [SerializeField] public GameObject buildEffect;
+    [SerializeField] public AudioSource buildSoundEffect;
     [SerializeField] public GameObject sellEffect;
     [SerializeField] public ParticleSystem buildEffectPartycleSystem;
     [SerializeField] public ParticleSystem sellEffectPartycleSystem;

@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour
 
     //Lives
     public static int Lives;
-    [HideInInspector] public int startLives = 3;
+    public int startLives = 3;
 
     public static int Rounds;
     

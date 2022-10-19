@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
 
     [Header("Bullet Attributes")]
     [SerializeField] GameObject impactEffect;
+    [SerializeField] AudioSource explosionFX;
     public float bulletspeed = 70f;
     public int bulletDamage = 5;
     public float effectDuration = 0.5f;
@@ -73,6 +74,7 @@ public class Bullet : MonoBehaviour
                 Damage(collider.transform);
             }
         }
+        explosionFX.Play();
     }
 
     private void OnDrawGizmos()

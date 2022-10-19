@@ -27,7 +27,6 @@ public class Enemy : MonoBehaviour
     {
         enemyHealt -= amount;
         enemyHitFX.Play();
-        Debug.Log(enemyHealt / 10);
         healthBar.fillAmount = (enemyHealt / enemyStartHeatlh);
         if (enemyHealt <= 0 && isDead == false)
         {

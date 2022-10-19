@@ -368,8 +368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d27c823dfff4a309eb84035899a86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStartHeatlh: 10
-  initialSpeed: 10
+  enemyStartHeatlh: 30
+  initialSpeed: 5
   enemySpeed: 0
   drop: 5
   deathEffect: {fileID: 7825762346005581969, guid: 4b47fe883ade544d0bfd764946627bae, type: 3}

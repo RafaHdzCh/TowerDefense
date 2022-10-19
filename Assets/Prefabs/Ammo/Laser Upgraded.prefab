@@ -213,6 +213,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactEffect: {fileID: 1223526616464650, guid: c590b17884b119046bc6412066500b7d, type: 3}
   bulletspeed: 70
-  bulletDamage: 8
+  bulletDamage: 15
   effectDuration: 0.5
   explosionRadius: 0

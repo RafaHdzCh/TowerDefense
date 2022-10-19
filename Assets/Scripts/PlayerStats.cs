@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
     //Money
     public static int Money;
-    [HideInInspector] public int startMoney = 350;
+    public int startMoney = 400;
 
     //Lives
     public static int Lives;

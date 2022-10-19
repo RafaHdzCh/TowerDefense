@@ -11,11 +11,13 @@ public class GameOver : MonoBehaviour
 
     public void Retry()
     {
+        WaveSpawner.EnemiesAlive = 0;
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
 
     public void Menu()
     {
+        WaveSpawner.EnemiesAlive = 0;
         sceneFader.FadeTo(menuSceneName);
     }
 }

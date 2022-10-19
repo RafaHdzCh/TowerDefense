@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partToRotate: {fileID: 1713590543488824578}
   firePoint: {fileID: 5528713565449108981}
-  shootFX: {fileID: 1977664240681778432, guid: 48a3e538abfb0402dba54858c97f20a3, type: 3}
+  shootFX: {fileID: -1570669356569899156}
   bulletPrefab: {fileID: 1514515939178938312, guid: 39f691357819c481da98195528bb6959, type: 3}
   range: 20
   fireRate: 5

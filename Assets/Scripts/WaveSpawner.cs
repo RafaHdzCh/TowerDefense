@@ -20,7 +20,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
-        if(EnemiesAlive > 0)
+        if (EnemiesAlive > 0)
         {
             return;
         }
@@ -58,6 +58,7 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(GameObject enemy)
     {
+        print("Method Enemy");
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
     }
 }

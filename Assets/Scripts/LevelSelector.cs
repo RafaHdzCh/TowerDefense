@@ -20,6 +20,7 @@ public class LevelSelector : MonoBehaviour
     }
     public void SelectLevel(string levelName)
     {
+        WaveSpawner.EnemiesAlive = 0;
         fader.FadeTo(levelName);
     }
 

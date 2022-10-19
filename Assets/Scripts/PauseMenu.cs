@@ -32,11 +32,13 @@ public class PauseMenu : MonoBehaviour
     public void Retry()
     {
         Toggle();
+        WaveSpawner.EnemiesAlive = 0;
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
     public void Menu()
     {
         Toggle();
+        WaveSpawner.EnemiesAlive = 0;
         sceneFader.FadeTo(menuSceneName);
     }
 }

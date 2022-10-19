@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d27c823dfff4a309eb84035899a86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStartHeatlh: 40
+  enemyStartHeatlh: 80
   initialSpeed: 5
   enemySpeed: 0
   drop: 10

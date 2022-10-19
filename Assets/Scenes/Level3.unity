@@ -2554,8 +2554,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFader: {fileID: 1339311255391820169}
-  nextLevel: Level2
-  levelUnlock: 2
+  nextLevel: Level3
+  levelUnlock: 3
 --- !u!82 &181809741
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8655,21 +8655,27 @@ MonoBehaviour:
   gameManager: {fileID: 881601728}
   waveCountdownText: {fileID: 2019763375}
   waves:
-  - enemy: {fileID: 8276207672010790110, guid: d7f7fe2e904d54f3990a1525bc46685b, type: 3}
-    count: 3
-    rate: 1.5
   - enemy: {fileID: 8276207672010790110, guid: 945c6a7bb8c92429a89dc47de1b894ae, type: 3}
-    count: 5
+    count: 10
     rate: 1
   - enemy: {fileID: 8276207672010790110, guid: ce3f0ae804f044f0f978baeac905f852, type: 3}
-    count: 7
-    rate: 2
+    count: 15
+    rate: 1.75
   - enemy: {fileID: 8276207672010790110, guid: 945c6a7bb8c92429a89dc47de1b894ae, type: 3}
+    count: 10
+    rate: 1.25
+  - enemy: {fileID: 8276207672010790110, guid: d7f7fe2e904d54f3990a1525bc46685b, type: 3}
+    count: 10
+    rate: 1.5
+  - enemy: {fileID: 8276207672010790110, guid: ce3f0ae804f044f0f978baeac905f852, type: 3}
+    count: 10
+    rate: 1
+  - enemy: {fileID: 8276207672010790110, guid: d7f7fe2e904d54f3990a1525bc46685b, type: 3}
     count: 10
     rate: 0.5
   - enemy: {fileID: 8276207672010790110, guid: ce3f0ae804f044f0f978baeac905f852, type: 3}
-    count: 10
-    rate: 0.5
+    count: 20
+    rate: 1.5
   spawnPoint: {fileID: 1018897943}
 --- !u!114 &881601726
 MonoBehaviour:
@@ -12791,7 +12797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1190752580
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19466,7 +19472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 300, y: -400}
+  m_AnchoredPosition: {x: 0, y: -400}
   m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1810311802

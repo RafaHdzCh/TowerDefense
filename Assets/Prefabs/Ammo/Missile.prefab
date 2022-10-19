@@ -49,7 +49,7 @@ MonoBehaviour:
   impactEffect: {fileID: 1845955007268882, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
   explosionFX: {fileID: -3329295686826229801}
   bulletspeed: 20
-  bulletDamage: 5
+  bulletDamage: 20
   effectDuration: 2
   explosionRadius: 4
 --- !u!82 &-3329295686826229801

@@ -1,4 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-*.cs linguist-language=C#
-*.shader linguist-language=ShaderLab
+# Forzar GitHub a detectar C# como el lenguaje principal
+*.cs linguist-detectable=true
+*.shader linguist-detectable=false
